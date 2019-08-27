@@ -16,5 +16,12 @@ create(DslContext.projectId, BuildType({
     enablePersonalBuilds = false
     type = BuildTypeSettings.Type.DEPLOYMENT
     maxRunningBuilds = 1
+
+    dependencies {
+        artifacts(RelativeId("Build")) {
+            buildRule = lastSuccessful()
+            artifactRules = "hari=> ../../../../../testhari"
+        }
+    }
 }))
 
