@@ -12,5 +12,5 @@ changeBuildType(RelativeId("Build")) {
     check(artifactRules == "") {
         "Unexpected option value: artifactRules = $artifactRules"
     }
-    artifactRules = """HelloPrint\HelloPrint\bin => HelloPrint\HelloPrint\bin"""
+    artifactRules = """HelloPrint\HelloPrint\bin => hari"""
 }
