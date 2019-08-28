@@ -18,9 +18,15 @@ create(DslContext.projectId, BuildType({
     maxRunningBuilds = 1
 
     dependencies {
-        artifacts(RelativeId("Build")) {
-            buildRule = lastSuccessful()
-            artifactRules = "hari=> ../../../../../testhari"
+        dependency(RelativeId("Build")) {
+            snapshot {
+                onDependencyFailure = FailureAction.FAIL_TO_START
+            }
+
+            artifacts {
+                buildRule = lastSuccessful()
+                artifactRules = "hari=> ../../../../../testhari"
+            }
         }
     }
 }))
