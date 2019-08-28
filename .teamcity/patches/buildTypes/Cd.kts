@@ -20,6 +20,7 @@ create(DslContext.projectId, BuildType({
     dependencies {
         dependency(RelativeId("Build")) {
             snapshot {
+                reuseBuilds = ReuseBuilds.NO
                 onDependencyFailure = FailureAction.FAIL_TO_START
             }
 
