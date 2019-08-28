@@ -25,8 +25,7 @@ create(DslContext.projectId, BuildType({
             }
 
             artifacts {
-                buildRule = lastSuccessful()
-                artifactRules = "hari=> ../../../../../testhari"
+                artifactRules = "hari"
             }
         }
     }
